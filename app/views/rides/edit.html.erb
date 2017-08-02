@@ -1,12 +1,10 @@
-<h1>Add a new Ride</h1>
+<h1>Edit RideCharge </h1>
 
-
-<%= form_for :ride, url: rides_path do |f| %>
-  
+<%= form_for(@ride) do |f| %>
   <% if @ride.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@ride.errors.count, "error") %> prohibited
+        <%= pluralize(@article.ride.count, "error") %> prohibited
         this RideCharge from being saved:
       </h2>
       <ul>
@@ -16,7 +14,7 @@
       </ul>
     </div>
   <% end %>
-
+ 
   <p>
     <%= f.label :date, "Date of ride" %><br>
     <%= f.date_field :date %>
@@ -46,6 +44,9 @@
   <p>
     <%= f.submit %>
   </p>
+
 <% end %>
+
+<%= link_to 'Delete RideCharge', ride_path(@ride), method: :delete, data: {confirm: 'Are you sure?'} %>
 
 <%= link_to 'Back to All Rides', rides_path %>
