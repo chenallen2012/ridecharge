@@ -1,0 +1,36 @@
+<h1>Add a new Ride</h1>
+
+
+<%= form_for :ride, url: rides_path do |f| %>
+  <p>
+    <%= f.label :date, "Date of ride" %><br>
+    <%= f.date_field :date %>
+  </p>
+ 
+  <p>
+    <%= f.label :price, "Total ride price" %><br>
+    <%= f.number_field :price %>
+  </p>
+ 
+  <p>
+    <%= f.label :rider_names, "Rider names (separate by comma or space)" %> <br>
+    <%= f.text_area :rider_names %>
+  </p>
+
+  <p>
+    <%= f.label :rider_count, "Number of riders" %><br>
+    <%= f.number_field :rider_count %>
+  </p>
+
+
+  <p>
+    <%= f.label :ride_complete, "All participants have paid" %> <br>
+    <%= f.check_box :ride_complete %>
+  </p>  
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back to All Rides', rides_path %>

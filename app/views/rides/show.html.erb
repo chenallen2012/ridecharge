@@ -1,0 +1,26 @@
+<p>
+	<strong>Ride date: </strong>
+	<%= @ride.date %>
+</p>
+
+<p>
+	<strong>Number of riders: </strong>
+	<%= @ride.rider_count %>
+</p>
+
+<p>
+	<strong>Rider names: </strong>
+	<%= @ride.rider_names %>
+</p>
+
+<p>
+	<strong>Total ride price ($): </strong>
+	<%= @ride.price %>
+</p>
+
+<p>
+	<strong>Payment complete? </strong>
+	<%= @ride.ride_complete %>
+</p>
+
+<%= link_to 'Back to All Rides', rides_path %>
