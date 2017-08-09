@@ -1,34 +1,74 @@
-<%= stylesheet_link_tag "application" %>
+<head>
+	<%= stylesheet_link_tag "application" %>
+</head>
+
 <body>
 	<div id="navbar">
-		<div id="navtitle">RIDECHARGE</div>
+		<div id="nav-title">RIDECHARGE</div>
+			<div class="nav-section">
+				<div class="nav-section-title">Home</div>
+			</div>
+			<div class="nav-section">
+				<div class="nav-section-title">Profile</div>
+			</div>
+			<div class="nav-section">
+				<div class="nav-section-title">Summary</div>
+			</div>
 	</div>
 
 
-	<h1>All RideCharges</h1>
-	 
-	<table>
-	  <tr>
-	    <th>Ride Date</th>
-	    <th>Number of Riders</th>
-	    <th>Rider Names</th>
-	    <th>Total Ride Price</th>
-	    <th>Payment Complete?</th>
-	  </tr>
-	 
-	  <% @rides.each do |ride| %>
-	    <tr>
-	      <td><%= ride.date %></td>
-	      <td><%= ride.rider_count %></td>
-	      <td><%= ride.rider_names %></td>
-	      <td><%= ride.price %></td>
-	      <td><%= ride.ride_complete %></td>
-	      <td><%= link_to 'View Ride', ride_path(ride) %> | </td>
-	      <td><%= link_to 'Edit RideCharge', edit_ride_path(ride) %> | </td>
-	      <td><%= link_to 'Delete RideCharge', ride_path(ride), method: :delete, data: {confirm: 'Are you sure?'} %></td>
-	    </tr>
-	  <% end %>
-	</table>
+	
+	<div id="content_title">All RideCharges</div>
+	<div id="content">	 
+<!-- 		<table>
+		  <tr>
+		    <th>Ride Date</th>
+		    <th>Number of Riders</th>
+		    <th>Rider Names</th>
+		    <th>Total Ride Price</th>
+		    <th>Payment Complete?</th>
+		  </tr>
+		 
+		  <% @rides.each do |ride| %>
+		    <tr>
+		      <td><%= ride.date %></td>
+		      <td><%= ride.rider_count %></td>
+		      <td><%= ride.rider_names %></td>
+		      <td><%= ride.price %></td>
+		      <td><%= ride.ride_complete %></td>
+		      <td><%= link_to 'View Ride', ride_path(ride) %> | </td>
+		      <td><%= link_to 'Edit RideCharge', edit_ride_path(ride) %> | </td>
+		      <td><%= link_to 'Delete RideCharge', ride_path(ride), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+		    </tr>
+		  <% end %>
+		</table> -->
+
+ 		<% @rides.each do |ride| %>
+
+			<%= link_to ride_path(ride), class: 'ride_card' do %>
+				<!-- <div class="ride_card" ride-id= "<%= ride.id %>"> -->
+					<div class="card_title"> <%= ride.date.strftime("%a %b %e") %> </br></div>
+					<div class="card_content_container">
+						<div class="card_section"> 
+							<div class="card_section_title"> Price </br> </div>
+							<div class="card_section_content"> <%= ride.price %> </div>
+						</div>
+						<div class="card_section"> 
+							<div class="card_section_title"> # Riders </br> </div>
+							<div class="card_section_content"> <%= ride.rider_count %> </div>
+						</div>
+						<div class="card_section">
+							<div class="card_section_title"> Rider Names </br> </div>
+							<div class="card_section_content"> <%= ride.rider_names %> </br> </div>
+						</div>
+					</div>
+				<!-- </div> -->
+			<% end %>
+
+		<% end %>
+	<!-- <div id="add_button"> + </div> -->
+	<%= link_to '+', new_ride_path, id: 'add_button' %>
+
+	</div>
 </body>
 
-<%= link_to 'Add New RideCharge', new_ride_path %>

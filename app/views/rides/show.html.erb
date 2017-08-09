@@ -25,5 +25,7 @@
 
 <%= link_to 'Edit RideCharge', edit_ride_path(@ride) %>
 </br>
+<%= link_to 'Delete RideCharge', ride_path(@ride), method: :delete, data: {confirm: 'Are you sure?'} %>
+</br>
 
-<%= link_to 'Back to All Rides', rides_path %>
+<%= link_to 'Back to All Rides', rides_path %>	

@@ -16,6 +16,7 @@
 body {
 	overflow: hidden;
 	margin: 0;
+	background: #E5E5E5;
 }
 
 
@@ -31,19 +32,142 @@ body {
 	border-radius: 10px;
 }
 
-#navtitle{
+#nav-title{
 	position: absolute;
 	width: 200px;
-	height: 82px;
+	/*height: 82px;*/
 	/*left: -4px;*/
 	top: 100px;
 
 	font-family: Raleway;
 	font-style: normal;
-	font-weight: 500;
+	font-weight: normal;
 	line-height: normal;
 	font-size: 24px;
 	text-align: center;
+	line-height: 24px;
 
 	color: #F2F2F2;
 }
+.nav-section{
+	position:relative;
+	top:150px;
+	margin:50px;
+
+	font-family: Raleway;
+	font-style: normal;
+	font-weight: normal;
+	text-align: center;
+	color:#000000;
+}
+
+.nav-section-title{
+
+}
+
+#content_title{
+	position: absolute;
+	left: 200px;
+	width: calc(100% - 200px);
+
+	font-family: Raleway;
+	text-align: center;
+	font-weight: normal;
+	font-size: 32px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+
+}
+
+#content{
+	position: absolute;
+	overflow: scroll;
+	left: 200px;
+	width: calc(100% - 200px);
+	height: calc(100% - 64px);
+	top: 64px;
+}
+
+.ride_card{
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+
+	background: #FFFFFF;
+	width: 300px;
+	height: 200px;
+	border-radius: 10px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	margin: 1%;
+	transition: 0.3s;
+
+	font-family: Raleway;
+	text-align: center;
+	font-weight: normal;
+	text-decoration: none;
+
+}
+.ride_card:hover{
+	box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+}
+
+.card_title{
+	font-size: 20px;
+	/*font-weight: normal;*/
+	color: #42D9C9;
+	margin: 30px;
+}
+.card_content_container{
+	position: relative;
+	width: 100%;
+	display: table;
+	table-layout: fixed;
+}
+.card_section{
+	position: relative;
+	display: table-cell;
+	font-size: 15px;
+	color: #000000;
+	text-align: center;
+}
+
+.card_section_title{
+	/*position: relative;*/
+	color: #909090;
+	margin-top: 20px;
+}
+
+.card_section_content{
+	position: relative;
+	color: #000000;
+	margin: 10px;
+}
+
+#add_button{
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+
+	background: #42D9C9;
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+	transition: 0.3s;
+
+	font-family: Raleway;
+	text-align: center;
+	font-weight: normal;
+	line-height: 50px;
+	font-size: 40px;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+#add_button:hover{
+	box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+}
+
+;

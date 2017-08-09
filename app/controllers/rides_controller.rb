@@ -29,7 +29,7 @@ class RidesController < ApplicationController
 	def update
 		@ride = Ride.find(params[:id])
 
-		if @article.update(ride_params)
+		if @ride.update(ride_params)
 			redirect_to @ride
 		else
 			render 'edit'
