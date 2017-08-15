@@ -5,9 +5,10 @@ class MessagesController < ApplicationController
   		message_body = params["Body"]
   		from_number = params["From"]
   		# date, price, names
-  		date, price, names = message_body.split(" ")
-  		
-  		puts date
+  		date_string, price, names = message_body.split(" ")
+      date_formatted = Date.strptime(date_string, "%m/%d/%Y")
+  		puts "Date ", date_string
+  		puts "date2", date_formatted
   		puts price
   		puts names
       puts message_body
@@ -16,13 +17,10 @@ class MessagesController < ApplicationController
   		boot_twilio
 
   		#need to parse the date correctly. 8/11/2017 is interpreted as 11/8/2017
-      #need to include rider count DONE
-      #sorts rides by most recent DONE
       #update page without refreshing
-      #secrets file 
 
       Ride.create!(
-        date: date,
+        date: date_formatted,
         price: price,
         rider_names: names,
         rider_count: count)
