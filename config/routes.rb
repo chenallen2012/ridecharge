@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+  get 'messages/reply'
+
   get 'welcome/index'
 
   resources :rides
+
+  resources :messages do
+  	collection do
+  		post 'reply'
+  	end
+  end
 
   root 'welcome#index'
 
