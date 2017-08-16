@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  resources :rides
+  resources :rides do
+    member do
+      post 'toggle_payment_status'
+    end
+  end
 
   resources :messages do
   	collection do

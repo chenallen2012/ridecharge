@@ -7,6 +7,7 @@ end
 
 # jQuery
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 #twilio
 gem 'twilio-ruby'
 

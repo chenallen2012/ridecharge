@@ -18,11 +18,15 @@
 	<%= @ride.price %>
 </p>
 
-<p>
-	<strong>Payment complete? </strong>
-	<%= @ride.ride_complete %>
-</p>
+<div>
+	<strong style="display: inline-block;">Payment complete? </strong>
+	<div id="status" style="display: inline-block;">
+		<%= @ride.ride_complete %>
+	</div>
+</div>
 
+<%= check_box_tag 'payment_status', @ride.ride_complete, @ride.ride_complete, :data => {:id => @ride.id} %>
+</br>
 
 <!-- put button to update ride with ride_complete -->
 <!-- do ajax call (checkbox) to update -->
