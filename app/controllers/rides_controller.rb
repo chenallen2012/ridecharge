@@ -6,6 +6,7 @@ class RidesController < ApplicationController
 
 	def show
 		@ride = Ride.find(params[:id])
+		puts @ride.ride_complete
 	end
 
 	def new

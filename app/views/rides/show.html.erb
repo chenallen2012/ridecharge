@@ -23,6 +23,11 @@
 	<%= @ride.ride_complete %>
 </p>
 
+
+<!-- put button to update ride with ride_complete -->
+<!-- do ajax call (checkbox) to update -->
+<!-- <%= button_to 'This Ride has been paid', ride_path(@ride, :ride_complete => true), method: :put %> -->
+
 <%= link_to 'Edit RideCharge', edit_ride_path(@ride) %>
 </br>
 <%= link_to 'Delete RideCharge', ride_path(@ride), method: :delete, data: {confirm: 'Are you sure?'} %>

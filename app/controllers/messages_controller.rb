@@ -5,7 +5,8 @@ class MessagesController < ApplicationController
   		message_body = params["Body"]
   		from_number = params["From"]
   		# date, price, names
-  		date_string, price, names = message_body.split(" ")
+      #names needs to not have spaces between the names/commas
+  		date_string, price, names, payment_status  = message_body.split(" ")
       date_formatted = Date.strptime(date_string, "%m/%d/%Y")
   		puts "Date ", date_string
   		puts "date2", date_formatted
@@ -13,6 +14,13 @@ class MessagesController < ApplicationController
   		puts names
       puts message_body
       count = names.split(",").length
+      if payment_status == "paid"
+        ride_complete = true
+      else
+        ride_complete = false
+      end
+      puts "payment status"
+      puts ride_complete
 
   		boot_twilio
 
@@ -23,7 +31,8 @@ class MessagesController < ApplicationController
         date: date_formatted,
         price: price,
         rider_names: names,
-        rider_count: count)
+        rider_count: count,
+        ride_complete: ride_complete)
 
   		if message_body == "Yessir"
 			  sms = @client.messages.create(
