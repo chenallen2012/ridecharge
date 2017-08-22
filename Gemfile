@@ -16,7 +16,7 @@ gem 'twilio-ruby'
 gem 'rails', '~> 5.1.2'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 
 # Use postgresql as database for heroku
 gem 'pg'
@@ -50,6 +50,8 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  #use sqlite3 in dev
+  gem 'sqlite3'
 end
 
 group :development do
