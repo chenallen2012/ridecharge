@@ -38,8 +38,8 @@ class RidesController < ApplicationController
 		# if params[:ride_complete]
 
 		if @ride.update(ride_params)
-			# redirect_to @ride
-			render json: @ride
+			redirect_to @ride
+			# render json: @ride
 		else
 			render 'edit'
 		end
