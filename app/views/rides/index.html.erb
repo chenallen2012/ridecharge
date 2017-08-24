@@ -45,7 +45,7 @@
 
  		<% @rides.each do |ride| %>
 
-			<%= link_to ride_path(ride), class: 'ride_card' do %>
+			<%= link_to ride_path(ride), class: (ride.ride_complete ? "ride_card_paid" : "ride_card") do %>
 				<!-- <div class="ride_card" ride-id= "<%= ride.id %>"> -->
 					<div class="card_title"> <%= ride.date.strftime("%a %b %e") %> </br></div>
 					<div class="card_content_container">
