@@ -176,56 +176,59 @@ body {
 	top: 15px;
 	right: 15px;
 	border-radius: 5px;
-	display: inline-block;
+	display: none;
 	padding: 5px;
 
-	color: #FF7676;
+	color: white;
 	font-size: 15px;
 	text-align: center;
-	background: #EDEDED;
+	background: #42D9C9;
 
 	/*transition: 0.3s;*/
 	/*line-height: 25px;*/
 }
-.payment_status:hover{
+.ride_card.paid .payment_status{
+	display: inline-block;
+}
+/*.payment_status:hover{
 	background: #9BEAE1;
 	color: white;
-}
-.payment_status:hover span{
+}*/
+/*.payment_status:hover span{
 	display: none;
-	/*animation: disappear 0.3s forwards;*/
-}
-.payment_status:hover:before{
+	animation: disappear 0.3s forwards;
+}*/
+/*.payment_status:hover:before{
 	animation: appear 1s forwards;
 	content: "Mark as Paid";
-}
+}*/
 
 
 
-.ride_card.paid .payment_status{
+/*.ride_card.paid .payment_status{
 	background: #42D9C9;
 	padding: 5px;
-}
-.ride_card.paid .payment_status:before {
+}*/
+/*.ride_card.paid .payment_status:before {
 	content: "Paid";
 	background: #42D9C9;
 	color: white;
 	border-radius: 5px;
 	padding: 5px;
-}
-.ride_card.paid .payment_status:hover{
+}*/
+/*.ride_card.paid .payment_status:hover{
 	background: white;
 	color: #42D9C9;
 }
 .ride_card.paid .payment_status:hover:before{
 	content: "Mark as Unpaid";
-	/*animation: disappear 1s forwards;*/
+	animation: disappear 1s forwards;
 	color: #42D9C9;
 	background: white;
-}
-.ride_card.paid .payment_status span {
+}*/
+/*.ride_card.paid .payment_status span {
 	display: none;
-}
+}*/
 
 @keyframe disappear {
 	from {opacity: 1;}
